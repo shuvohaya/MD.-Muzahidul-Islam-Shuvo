@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD. Muzahidul Islam Shuvo | Graphic Designer Portfolio</title>
+<meta name="description" content="MD. Muzahidul Islam Shuvo — Professional Graphic Designer specializing in Logo Design, Branding, Social Media Design, Posters, Banners and Business Cards. Creative designs that build your brand.">
+<meta name="keywords" content="Graphic Designer, Logo Design, Branding, Social Media Design, Poster Design, MD Muzahidul Islam Shuvo">
+<meta property="og:title" content="MD. Muzahidul Islam Shuvo | Graphic Designer">
+<meta property="og:description" content="Creative Designs That Build Your Brand.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+  --bg:#07080a;
+  --bg-alt:#0b0d11;
+  --surface:rgba(255,255,255,0.045);
+  --surface-strong:rgba(255,255,255,0.07);
+  --border:rgba(255,255,255,0.09);
+  --border-strong:rgba(255,255,255,0.16);
+  --blue:#2f6fed;
+  --cyan:#22d3ee;
+  --grad: linear-gradient(120deg,var(--blue),var(--cyan));
+  --text:#f3f6fb;
+  --muted:#94a3b8;
+  --muted-2:#5f6b7d;
+  --radius:18px;
+  --font-display:'Poppins',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --ease:cubic-bezier(.16,.84,.44,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  overflow-x:hidden;
+  line-height:1.6;
+}
+::selection{background:var(--cyan);color:#07080a;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;letter-spacing:-0.02em;}
+
+/* scrollbar */
+::-webkit-scrollbar{width:9px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--blue),var(--cyan));border-radius:10px;}
+
+/* background mesh */
+.bg-mesh{
+  position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(ellipse 700px 500px at 12% -5%, rgba(47,111,237,0.28), transparent 60%),
+    radial-gradient(ellipse 600px 500px at 90% 15%, rgba(34,211,238,0.16), transparent 60%),
+    radial-gradient(ellipse 800px 600px at 50% 100%, rgba(47,111,237,0.14), transparent 60%),
+    var(--bg);
+}
+.grain{
+  position:fixed;inset:0;z-index:-1;opacity:.035;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- loader ---------- */
+#loader{
+  position:fixed;inset:0;z-index:9999;background:var(--bg);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;
+  transition:opacity .6s var(--ease), visibility .6s var(--ease);
+}
+#loader.hide{opacity:0;visibility:hidden;}
+.loader-mark{
+  font-family:var(--font-display);font-weight:800;font-size:15px;letter-spacing:.4em;
+  color:var(--muted);text-transform:uppercase;
+}
+.loader-bar{width:180px;height:2px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;}
+.loader-bar span{display:block;height:100%;width:0%;background:var(--grad);animation:load 1.4s var(--ease) forwards;}
+@keyframes load{to{width:100%;}}
+
+/* ---------- utility ---------- */
+.container{max-width:1220px;margin:0 auto;padding:0 32px;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);
+  font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--cyan);margin-bottom:16px;
+}
+.eyebrow::before{content:'';width:22px;height:1px;background:var(--grad);}
+.section{padding:130px 0;position:relative;}
+.section-head{max-width:640px;margin-bottom:64px;}
+.section-head h2{font-size:clamp(30px,4vw,46px);line-height:1.15;}
+.section-head p{color:var(--muted);margin-top:16px;font-size:16.5px;max-width:520px;}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+.section-head.center .eyebrow::before{display:none;}
+
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:100px;
+  font-family:var(--font-display);font-weight:600;font-size:14.5px;letter-spacing:.01em;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s var(--ease),border-color .35s var(--ease);
+}
+.btn-primary{background:var(--grad);color:#04070d;box-shadow:0 8px 30px -8px rgba(47,111,237,.6);}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 36px -8px rgba(34,211,238,.55);}
+.btn-ghost{border:1px solid var(--border-strong);color:var(--text);background:rgba(255,255,255,.02);}
+.btn-ghost:hover{border-color:var(--cyan);background:rgba(34,211,238,.06);transform:translateY(-3px);}
+
+.glass{
+  background:var(--surface);
+  border:1px solid var(--border);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-radius:var(--radius);
+}
+
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+[data-reveal].in{opacity:1;transform:translateY(0);}
+
+/* ---------- navbar ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  padding:22px 0;transition:padding .35s var(--ease),background .35s var(--ease),border-color .35s var(--ease);
+  border-bottom:1px solid transparent;
+}
+header.scrolled{
+  padding:14px 0;background:rgba(7,8,10,.72);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:var(--font-display);font-weight:800;font-size:19px;display:flex;align-items:center;gap:10px;}
+.logo .mark{
+  width:38px;height:38px;border-radius:11px;background:var(--grad);
+  display:flex;align-items:center;justify-content:center;color:#04070d;font-weight:800;font-size:15px;
+}
+.nav-links{display:flex;align-items:center;gap:38px;}
+.nav-links a{font-size:14.5px;font-weight:500;color:var(--muted);transition:color .25s;position:relative;}
+.nav-links a:hover{color:var(--text);}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1.5px;background:var(--grad);transition:width .3s var(--ease);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{display:flex;align-items:center;gap:18px;}
+.burger{display:none;flex-direction:column;gap:5px;width:26px;z-index:1200;}
+.burger span{height:2px;background:var(--text);border-radius:2px;transition:transform .3s var(--ease),opacity .3s;}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ---------- hero ---------- */
+.hero{
+  min-height:100vh;display:flex;align-items:center;position:relative;
+  padding:150px 0 90px;
+}
+.hero-inner{display:grid;grid-template-columns:1.05fr .85fr;gap:60px;align-items:center;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:100px;
+  font-size:13px;font-weight:500;color:var(--muted);margin-bottom:26px;
+}
+.hero-badge .dot{width:24px;height:24px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:11px;color:#04070d;}
+.hero h1{font-size:clamp(38px,5.2vw,64px);line-height:1.08;}
+.hero h1 .grad-text{
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{color:var(--muted);font-size:17px;max-width:520px;margin:24px 0 38px;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:52px;}
+.hero-stats{display:flex;gap:38px;flex-wrap:wrap;}
+.hero-stats div strong{display:block;font-family:var(--font-display);font-size:26px;font-weight:800;}
+.hero-stats div span{font-size:12.5px;color:var(--muted-2);text-transform:uppercase;letter-spacing:.08em;}
+
+.hero-visual{position:relative;height:520px;}
+.hero-frame{
+  position:absolute;inset:0;border-radius:26px;overflow:hidden;
+  background:linear-gradient(160deg,#101319,#070809);
+  border:1px solid var(--border-strong);
+  box-shadow:0 40px 100px -30px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.02) inset;
+}
+.hero-frame .glow{position:absolute;width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,211,238,.35),transparent 70%);filter:blur(10px);
+  top:-60px;right:-60px;animation:float 7s ease-in-out infinite;}
+.hero-frame .glow2{position:absolute;width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(47,111,237,.35),transparent 70%);filter:blur(10px);
+  bottom:-60px;left:-40px;animation:float 8s ease-in-out infinite reverse;}
+@keyframes float{0%,100%{transform:translateY(0px);}50%{transform:translateY(-22px);}}
+
+.avatar-ring{
+  position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);
+  width:230px;height:230px;border-radius:50%;
+  background:linear-gradient(160deg,#171b22,#0a0b0e);
+  border:1px solid var(--border-strong);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 0 1px rgba(255,255,255,.03) inset, 0 30px 60px -20px rgba(0,0,0,.6);
+}
+.avatar-ring i{font-size:88px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.avatar-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 12%;}
+.avatar-ring::before{
+  content:'';position:absolute;inset:-1px;border-radius:50%;padding:1px;
+  background:conic-gradient(from 0deg,var(--blue),var(--cyan),var(--blue));
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;animation:spin 6s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+.layer-chip{
+  position:absolute;padding:11px 16px;border-radius:12px;display:flex;align-items:center;gap:10px;
+  font-size:12.5px;font-weight:600;font-family:var(--font-display);
+  animation:float 6s ease-in-out infinite;
+}
+.layer-chip i{font-size:14px;}
+.chip-1{top:8%;left:4%;animation-delay:.2s;}
+.chip-1 i{color:var(--cyan);}
+.chip-2{bottom:16%;right:4%;animation-delay:1s;}
+.chip-2 i{color:var(--blue);}
+.chip-3{top:6%;right:10%;animation-delay:.6s;}
+.chip-3 i{color:#a78bfa;}
+
+.scroll-cue{
+  position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted-2);font-size:11px;
+  letter-spacing:.15em;text-transform:uppercase;
+}
+.scroll-cue .line{width:1px;height:34px;background:linear-gradient(var(--muted-2),transparent);position:relative;overflow:hidden;}
+.scroll-cue .line::after{content:'';position:absolute;top:-100%;width:100%;height:100%;background:linear-gradient(var(--cyan),transparent);animation:scrolldown 2s ease-in-out infinite;}
+@keyframes scrolldown{to{top:100%;}}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center;}
+.about-card{padding:44px;position:relative;}
+.about-card .quote-icon{font-size:34px;color:var(--cyan);opacity:.5;margin-bottom:18px;}
+.about-photo{position:relative;aspect-ratio:4/5;border-radius:22px;overflow:hidden;
+  background:linear-gradient(160deg,#151920,#0a0b0e);border:1px solid var(--border-strong);
+  display:flex;align-items:center;justify-content:center;}
+.about-photo i{font-size:120px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.85;}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%;}
+.about-photo .tag{position:absolute;bottom:18px;left:18px;right:18px;padding:14px 18px;border-radius:14px;
+  display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+.about-text p{color:var(--muted);margin-bottom:18px;font-size:16px;}
+.about-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px;}
+.about-list li{display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--text);}
+.about-list li i{color:var(--cyan);}
+
+/* ---------- services ---------- */
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.service-card{padding:32px 26px;transition:transform .4s var(--ease),border-color .4s var(--ease),background .4s var(--ease);}
+.service-card:hover{transform:translateY(-8px);border-color:var(--border-strong);background:var(--surface-strong);}
+.service-card .icon{
+  width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(140deg,rgba(47,111,237,.18),rgba(34,211,238,.1));
+  border:1px solid var(--border-strong);margin-bottom:20px;font-size:20px;color:var(--cyan);
+}
+.service-card h3{font-size:17px;margin-bottom:8px;}
+.service-card p{font-size:13.5px;color:var(--muted);}
+
+/* ---------- skills ---------- */
+.skills-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center;}
+.skill-row{margin-bottom:26px;}
+.skill-top{display:flex;justify-content:space-between;margin-bottom:10px;font-family:var(--font-display);font-size:14.5px;font-weight:600;}
+.skill-top span:last-child{color:var(--cyan);}
+.skill-track{height:8px;border-radius:20px;background:rgba(255,255,255,.06);overflow:hidden;}
+.skill-fill{height:100%;border-radius:20px;background:var(--grad);width:0;transition:width 1.4s var(--ease);}
+.skills-side{padding:40px;text-align:left;}
+.skills-side i{font-size:30px;color:var(--cyan);margin-bottom:16px;}
+.skills-side p{color:var(--muted);font-size:15px;}
+
+/* ---------- portfolio ---------- */
+.filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:46px;}
+.filter-btn{
+  padding:10px 22px;border-radius:100px;font-size:13.5px;font-weight:600;font-family:var(--font-display);
+  border:1px solid var(--border);color:var(--muted);transition:all .3s var(--ease);
+}
+.filter-btn:hover{color:var(--text);border-color:var(--border-strong);}
+.filter-btn.active{background:var(--grad);color:#04070d;border-color:transparent;}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.g-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:transform .45s var(--ease),border-color .4s;position:relative;}
+.g-card:hover{transform:translateY(-6px);border-color:var(--border-strong);}
+.g-thumb{aspect-ratio:4/3;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.g-thumb i{font-size:46px;color:rgba(255,255,255,.85);position:relative;z-index:2;}
+.g-thumb::before{content:'';position:absolute;inset:0;opacity:.9;}
+.g-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(4,6,10,.92));
+  display:flex;align-items:flex-end;padding:20px;opacity:0;transition:opacity .35s var(--ease);z-index:3;}
+.g-card:hover .g-overlay{opacity:1;}
+.g-overlay .view-btn{
+  padding:9px 18px;border-radius:100px;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);
+  font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.2);
+}
+.g-body{padding:20px 22px 24px;}
+.g-cat{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);font-weight:600;margin-bottom:6px;}
+.g-body h3{font-size:16.5px;margin-bottom:6px;}
+.g-body p{font-size:13px;color:var(--muted);}
+.g-card[data-cat="logos"] .g-thumb::before{background:linear-gradient(135deg,#1b2b52,#0d1420);}
+.g-card[data-cat="posters"] .g-thumb::before{background:linear-gradient(135deg,#123a3f,#0a1a1d);}
+.g-card[data-cat="banners"] .g-thumb::before{background:linear-gradient(135deg,#22224a,#0d0d24);}
+.g-card[data-cat="social"] .g-thumb::before{background:linear-gradient(135deg,#12304a,#081420);}
+.g-card[data-cat="business-cards"] .g-thumb::before{background:linear-gradient(135deg,#1a1f38,#0a0c1a);}
+.g-card[data-cat="branding"] .g-thumb::before{background:linear-gradient(135deg,#123244,#081a22);}
+.g-card.hidden{display:none;}
+
+/* ---------- why choose ---------- */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.why-card{padding:34px 28px;text-align:left;}
+.why-card .num{font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--muted-2);margin-bottom:16px;letter-spacing:.05em;}
+.why-card i{font-size:24px;color:var(--cyan);margin-bottom:14px;display:block;}
+.why-card h3{font-size:16.5px;margin-bottom:8px;}
+.why-card p{font-size:13.5px;color:var(--muted);}
+
+/* ---------- testimonials ---------- */
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.test-card{padding:32px;}
+.stars{color:#fbbf24;font-size:13px;margin-bottom:18px;letter-spacing:2px;}
+.test-card p{color:var(--muted);font-size:14.5px;margin-bottom:26px;}
+.test-person{display:flex;align-items:center;gap:14px;}
+.test-avatar{width:44px;height:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;color:#04070d;font-size:14px;}
+.test-person strong{display:block;font-size:14px;font-family:var(--font-display);}
+.test-person span{font-size:12px;color:var(--muted-2);}
+
+/* ---------- stats ---------- */
+.stats-band{padding:70px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;}
+.stat-item strong{
+  display:block;font-family:var(--font-display);font-size:clamp(34px,4vw,48px);font-weight:800;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.stat-item span{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;}
+.contact-info{padding:40px;}
+.contact-info h3{font-size:20px;margin-bottom:14px;}
+.contact-info p{color:var(--muted);font-size:14.5px;margin-bottom:30px;}
+.contact-item{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+.contact-item .ic{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--cyan);flex-shrink:0;}
+.contact-item strong{display:block;font-size:14px;}
+.contact-item span{font-size:13px;color:var(--muted-2);}
+.social-row{display:flex;gap:12px;margin-top:30px;}
+.social-row a{width:42px;height:42px;border-radius:12px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .3s var(--ease);}
+.social-row a:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px);}
+.contact-form{padding:44px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+.field{display:flex;flex-direction:column;gap:8px;}
+.field label{font-size:12.5px;color:var(--muted);font-weight:500;}
+.field input,.field textarea{
+  background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;
+  padding:14px 16px;color:var(--text);font-family:var(--font-body);font-size:14.5px;
+  transition:border-color .3s,background .3s;
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--cyan);background:rgba(34,211,238,.04);}
+.field textarea{resize:vertical;min-height:130px;}
+.form-actions{display:flex;gap:14px;margin-top:8px;flex-wrap:wrap;}
+.btn-whatsapp{background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.4);color:#25d366;}
+.btn-whatsapp:hover{background:rgba(37,211,102,.2);transform:translateY(-3px);}
+
+/* ---------- footer ---------- */
+footer{padding:60px 0 30px;border-top:1px solid var(--border);}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;margin-bottom:36px;}
+.footer-links{display:flex;gap:28px;flex-wrap:wrap;}
+.footer-links a{font-size:13.5px;color:var(--muted);}
+.footer-links a:hover{color:var(--cyan);}
+.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:26px;border-top:1px solid var(--border);font-size:12.5px;color:var(--muted-2);}
+
+/* ---------- back to top ---------- */
+#toTop{
+  position:fixed;bottom:28px;right:28px;width:48px;height:48px;border-radius:50%;
+  background:var(--grad);color:#04070d;display:flex;align-items:center;justify-content:center;
+  font-size:16px;z-index:400;opacity:0;visibility:hidden;transform:translateY(12px);
+  transition:opacity .35s var(--ease),transform .35s var(--ease),visibility .35s;
+  box-shadow:0 10px 30px -10px rgba(34,211,238,.5);
+}
+#toTop.show{opacity:1;visibility:visible;transform:translateY(0);}
+
+/* ---------- responsive ---------- */
+@media(max-width:1024px){
+  .hero-inner,.about-grid,.skills-wrap,.contact-grid{grid-template-columns:1fr;}
+  .hero-visual{height:400px;order:-1;}
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .gallery,.why-grid,.test-grid,.stats-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta .btn-ghost{display:none;}
+  .burger{display:flex;}
+  .container{padding:0 22px;}
+  .section{padding:90px 0;}
+  .hero{padding:130px 0 70px;}
+  .services-grid,.gallery,.why-grid,.test-grid{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:34px;}
+  .form-row{grid-template-columns:1fr;}
+  .about-list{grid-template-columns:1fr;}
+  .hero-stats{gap:26px;}
+  .footer-inner{flex-direction:column;align-items:flex-start;}
+
+  .mobile-menu{
+    position:fixed;inset:0;background:rgba(6,7,9,.98);backdrop-filter:blur(20px);
+    z-index:1100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;
+    opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s;
+  }
+  .mobile-menu.open{opacity:1;visibility:visible;}
+  .mobile-menu a{font-family:var(--font-display);font-size:24px;font-weight:600;}
+}
+@media(min-width:769px){.mobile-menu{display:none;}}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:0.001s !important;transition-duration:0.001s !important;}
+}
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <div class="loader-mark">SHUVO&nbsp;DESIGN</div>
+  <div class="loader-bar"><span></span></div>
+</div>
+
+<div class="bg-mesh"></div>
+<div class="grain"></div>
+
+<header id="siteHeader">
+  <div class="container nav-inner">
+    <a href="#home" class="logo"><span class="mark">MS</span> Shuvo</a>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost" style="padding:12px 24px;">Hire Me</a>
+      <div class="burger" id="burger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#testimonials">Reviews</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div data-reveal>
+      <div class="hero-badge glass"><span class="dot"><i class="fa-solid fa-check"></i></span> Available for freelance projects</div>
+      <h1>Hi, I'm MD. Muzahidul<br>Islam <span class="grad-text">Shuvo</span></h1>
+      <p class="hero-sub">Professional Graphic Designer specializing in Logo Design, Branding, Social Media Design, Posters, Banners, Business Cards and Digital Marketing Creatives.</p>
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i> View Portfolio</a>
+        <a href="#contact" class="btn btn-ghost"><i class="fa-regular fa-paper-plane"></i> Hire Me</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>50+</strong><span>Projects</span></div>
+        <div><strong>30+</strong><span>Happy Clients</span></div>
+        <div><strong>3+</strong><span>Years Exp.</span></div>
+        <div><strong>100%</strong><span>Satisfaction</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" data-reveal>
+      <div class="hero-frame">
+        <div class="glow"></div>
+        <div class="glow2"></div>
+        <div class="avatar-ring"><img src="assets/profile.jpg" alt="MD. Muzahidul Islam Shuvo"></div>
+        <div class="layer-chip glass chip-1"><i class="fa-solid fa-swatchbook"></i> Branding</div>
+        <div class="layer-chip glass chip-2"><i class="fa-regular fa-image"></i> Poster Design</div>
+        <div class="layer-chip glass chip-3"><i class="fa-brands fa-figma"></i> Logo Design</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><div class="line"></div></div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div data-reveal>
+      <div class="about-photo glass">
+        <img src="assets/profile.jpg" alt="MD. Muzahidul Islam Shuvo — Graphic Designer">
+        <div class="tag glass">
+          <div><strong style="font-family:var(--font-display);font-size:14px;">MD. Muzahidul Islam Shuvo</strong><br><span style="font-size:12px;color:var(--muted);">Graphic Designer</span></div>
+          <i class="fa-solid fa-badge-check" style="color:var(--cyan);"></i>
+        </div>
+      </div>
+    </div>
+    <div data-reveal>
+      <span class="eyebrow">About Me</span>
+      <h2 style="font-size:clamp(28px,3.6vw,40px);margin-bottom:22px;">Creative Designs That<br>Build Your Brand.</h2>
+      <div class="about-text">
+        <p>I am a passionate Graphic Designer dedicated to creating clean, modern and eye-catching designs that help businesses grow. I focus on creativity, branding and delivering high-quality designs that leave a lasting impression.</p>
+        <p>Every project starts with understanding your brand's voice — then translating it into visuals that connect with your audience and stand out from the crowd.</p>
+      </div>
+      <ul class="about-list">
+        <li><i class="fa-solid fa-circle-check"></i> Custom Brand Identity</li>
+        <li><i class="fa-solid fa-circle-check"></i> Pixel-Perfect Detailing</li>
+        <li><i class="fa-solid fa-circle-check"></i> On-Time Delivery</li>
+        <li><i class="fa-solid fa-circle-check"></i> Unlimited Revisions</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" style="margin-top:34px;"><i class="fa-regular fa-paper-plane"></i> Let's Work Together</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head center" style="margin:0 auto 64px;" data-reveal>
+      <span class="eyebrow" style="margin:0 auto 16px;justify-content:center;">What I Do</span>
+      <h2>Services Built For Growing Brands</h2>
+      <p style="margin-left:auto;margin-right:auto;">A full suite of design services to give your brand a consistent, professional and memorable identity.</p>
+    </div>
+    <div class="services-grid" id="servicesGrid" data-reveal></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills" style="background:var(--bg-alt);">
+  <div class="container skills-wrap">
+    <div data-reveal>
+      <span class="eyebrow">Expertise</span>
+      <h2 style="font-size:clamp(28px,3.6vw,40px);margin-bottom:18px;">Tools & Skills I<br>Master Every Day</h2>
+      <div class="skills-side glass" style="padding:0;border:none;background:none;">
+        <p>Years of hands-on practice across the leading design software, refined through real client work and a genuine love for detail.</p>
+      </div>
+    </div>
+    <div data-reveal>
+      <div class="skill-row" data-value="95"><div class="skill-top"><span>Photoshop</span><span>95%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      <div class="skill-row" data-value="90"><div class="skill-top"><span>Illustrator</span><span>90%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      <div class="skill-row" data-value="95"><div class="skill-top"><span>Canva</span><span>95%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      <div class="skill-row" data-value="90"><div class="skill-top"><span>Branding</span><span>90%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      <div class="skill-row" data-value="88"><div class="skill-top"><span>Typography</span><span>88%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      <div class="skill-row" data-value="95"><div class="skill-top"><span>Social Media Design</span><span>95%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+  <div class="container">
+    <div class="section-head center" style="margin:0 auto 44px;" data-reveal>
+      <span class="eyebrow" style="margin:0 auto 16px;justify-content:center;">Portfolio</span>
+      <h2>Selected Work</h2>
+      <p style="margin-left:auto;margin-right:auto;">A curated collection of recent projects across branding, print and digital design.</p>
+    </div>
+    <div class="filters" id="filters" data-reveal>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="logos">Logos</button>
+      <button class="filter-btn" data-filter="posters">Posters</button>
+      <button class="filter-btn" data-filter="banners">Banners</button>
+      <button class="filter-btn" data-filter="social">Social Media</button>
+      <button class="filter-btn" data-filter="business-cards">Business Cards</button>
+      <button class="filter-btn" data-filter="branding">Branding</button>
+    </div>
+    <div class="gallery" id="gallery" data-reveal></div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE ME -->
+<section class="section" style="background:var(--bg-alt);">
+  <div class="container">
+    <div class="section-head center" style="margin:0 auto 64px;" data-reveal>
+      <span class="eyebrow" style="margin:0 auto 16px;justify-content:center;">Why Choose Me</span>
+      <h2>Design That Delivers Results</h2>
+    </div>
+    <div class="why-grid" id="whyGrid" data-reveal></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="container stats-grid">
+    <div class="stat-item" data-count="50">
+      <strong><span class="num">0</span>+</strong><span>Projects Completed</span>
+    </div>
+    <div class="stat-item" data-count="30">
+      <strong><span class="num">0</span>+</strong><span>Happy Clients</span>
+    </div>
+    <div class="stat-item" data-count="3">
+      <strong><span class="num">0</span>+</strong><span>Years Experience</span>
+    </div>
+    <div class="stat-item" data-count="100">
+      <strong><span class="num">0</span>%</strong><span>Client Satisfaction</span>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-head center" style="margin:0 auto 64px;" data-reveal>
+      <span class="eyebrow" style="margin:0 auto 16px;justify-content:center;">Testimonials</span>
+      <h2>What Clients Say</h2>
+    </div>
+    <div class="test-grid" id="testGrid" data-reveal></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info glass" data-reveal>
+      <h3>Let's Create Something Great</h3>
+      <p>Have a project in mind? Send a message and I'll get back to you within 24 hours.</p>
+      <div class="contact-item"><div class="ic"><i class="fa-regular fa-envelope"></i></div><div><strong>Email</strong><span>hello.shuvo.design@gmail.com</span></div></div>
+      <div class="contact-item"><div class="ic"><i class="fa-solid fa-phone"></i></div><div><strong>Phone</strong><span>+880 1XX XXX XXXX</span></div></div>
+      <div class="contact-item"><div class="ic"><i class="fa-solid fa-location-dot"></i></div><div><strong>Location</strong><span>Bangladesh</span></div></div>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="contact-form glass" data-reveal>
+      <form id="contactForm">
+        <div class="form-row">
+          <div class="field"><label>Name</label><input type="text" placeholder="Your full name" required></div>
+          <div class="field"><label>Email</label><input type="email" placeholder="you@email.com" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Phone</label><input type="tel" placeholder="+880 1XX XXX XXXX"></div>
+          <div class="field"><label>Subject</label><input type="text" placeholder="Project type"></div>
+        </div>
+        <div class="field" style="margin-bottom:22px;">
+          <label>Message</label>
+          <textarea placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary"><i class="fa-regular fa-paper-plane"></i> Send Message</button>
+          <a href="https://wa.me/8801XXXXXXXXX" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          <a href="#" target="_blank" class="btn btn-ghost"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#home" class="logo"><span class="mark">MS</span> Shuvo</a>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="social-row" style="margin:0;">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-behance"></i></a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>MD. Muzahidul Islam Shuvo — Graphic Designer</span>
+      <span>&copy; 2026 All Rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+/* ---------- loader ---------- */
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('loader').classList.add('hide'),900);
+});
+
+/* ---------- data ---------- */
+const services=[
+ {icon:'fa-signature',title:'Logo Design',desc:'Unique, memorable logos that define your brand identity.'},
+ {icon:'fa-swatchbook',title:'Brand Identity',desc:'Complete visual systems — color, type and guidelines.'},
+ {icon:'fa-id-card',title:'Business Card Design',desc:'Elegant cards that make a strong first impression.'},
+ {icon:'fa-file-lines',title:'Flyer Design',desc:'Eye-catching flyers for promotions and events.'},
+ {icon:'fa-image',title:'Poster Design',desc:'Bold, high-impact posters that grab attention.'},
+ {icon:'fa-panorama',title:'Banner Design',desc:'Web and print banners built to convert.'},
+ {icon:'fa-hashtag',title:'Social Media Post Design',desc:'Scroll-stopping content for every platform.'},
+ {icon:'fa-brands fa-youtube',title:'YouTube Thumbnail',desc:'High-CTR thumbnails that boost your views.'},
+ {icon:'fa-brands fa-youtube',title:'YouTube Banner',desc:'Channel art that reflects your brand style.'},
+ {icon:'fa-brands fa-facebook',title:'Facebook Cover Design',desc:'Custom covers that strengthen your page identity.'},
+ {icon:'fa-box-open',title:'Packaging Design',desc:'Product packaging that stands out on the shelf.'},
+ {icon:'fa-wand-magic-sparkles',title:'Photo Editing',desc:'Professional retouching and photo manipulation.'}
+];
+const servicesGrid=document.getElementById('servicesGrid');
+servicesGrid.innerHTML=services.map(s=>`
+  <div class="service-card glass">
+    <div class="icon"><i class="fa-solid ${s.icon.startsWith('fa-brands')?'':''} ${s.icon}"></i></div>
+    <h3>${s.title}</h3><p>${s.desc}</p>
+  </div>`).join('');
+
+const projects=[
+ {cat:'logos',icon:'fa-signature',name:'Aurelia Logo Mark',tag:'Logo Design',desc:'Minimal wordmark for a lifestyle brand.'},
+ {cat:'branding',icon:'fa-swatchbook',name:'Northline Brand Kit',tag:'Branding',desc:'Full identity system for a coffee roastery.'},
+ {cat:'posters',icon:'fa-image',name:'Festive Sale Poster',tag:'Poster Design',desc:'High-contrast promo poster for retail.'},
+ {cat:'social',icon:'fa-hashtag',name:'Product Launch Carousel',tag:'Social Media',desc:'Instagram carousel set for a launch campaign.'},
+ {cat:'business-cards',icon:'fa-id-card',name:'Studio Verve Card',tag:'Business Card',desc:'Dual-tone premium business card design.'},
+ {cat:'banners',icon:'fa-panorama',name:'SaaS Landing Banner',tag:'Banner Design',desc:'Web hero banner for a SaaS product.'},
+ {cat:'logos',icon:'fa-signature',name:'Orbit Tech Emblem',tag:'Logo Design',desc:'Geometric emblem logo for a tech startup.'},
+ {cat:'posters',icon:'fa-image',name:'Music Fest Poster',tag:'Poster Design',desc:'Bold typographic event poster.'},
+ {cat:'social',icon:'fa-hashtag',name:'Brand Story Post Set',tag:'Social Media',desc:'Story templates for consistent brand voice.'},
+ {cat:'branding',icon:'fa-swatchbook',name:'Sage & Co. Identity',tag:'Branding',desc:'Organic identity for a skincare brand.'},
+ {cat:'business-cards',icon:'fa-id-card',name:'Minimal Studio Card',tag:'Business Card',desc:'Clean, type-driven card layout.'},
+ {cat:'banners',icon:'fa-panorama',name:'Summer Campaign Banner',tag:'Banner Design',desc:'E-commerce sale campaign banner set.'}
+];
+const gallery=document.getElementById('gallery');
+gallery.innerHTML=projects.map(p=>`
+  <div class="g-card glass" data-cat="${p.cat}">
+    <div class="g-thumb"><i class="fa-solid ${p.icon}"></i>
+      <div class="g-overlay"><span class="view-btn"><i class="fa-regular fa-eye"></i> View Project</span></div>
+    </div>
+    <div class="g-body">
+      <div class="g-cat">${p.tag}</div>
+      <h3>${p.name}</h3>
+      <p>${p.desc}</p>
+    </div>
+  </div>`).join('');
+
+document.getElementById('filters').addEventListener('click',e=>{
+  const btn=e.target.closest('.filter-btn');
+  if(!btn)return;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const f=btn.dataset.filter;
+  document.querySelectorAll('.g-card').forEach(c=>{
+    c.classList.toggle('hidden', f!=='all' && c.dataset.cat!==f);
+  });
+});
+
+const why=[
+ {icon:'fa-lightbulb',title:'Creative Concepts',desc:'Fresh, original ideas tailored to your brand story.'},
+ {icon:'fa-gem',title:'High Quality Designs',desc:'Meticulous attention to detail in every file delivered.'},
+ {icon:'fa-bolt',title:'Fast Delivery',desc:'Reliable turnaround without compromising on quality.'},
+ {icon:'fa-arrows-rotate',title:'Unlimited Revisions',desc:'We refine together until it feels exactly right.'},
+ {icon:'fa-face-smile',title:'Client Satisfaction',desc:'A collaborative process built on clear communication.'},
+ {icon:'fa-tag',title:'Affordable Pricing',desc:'Premium design quality at rates that make sense.'}
+];
+document.getElementById('whyGrid').innerHTML=why.map((w,i)=>`
+  <div class="why-card glass">
+    <div class="num">0${i+1}</div>
+    <i class="fa-solid ${w.icon}"></i>
+    <h3>${w.title}</h3><p>${w.desc}</p>
+  </div>`).join('');
+
+const testimonials=[
+ {name:'Rafiul Hasan',role:'Founder, Northline Coffee',text:'Shuvo captured our brand vision perfectly. The identity he designed elevated our entire business.'},
+ {name:'Nusrat Jahan',role:'Marketing Lead, Sage & Co.',text:'Professional, fast and incredibly creative. Every design felt custom-made for our audience.'},
+ {name:'Tanvir Ahmed',role:'CEO, Orbit Tech',text:'Working with Shuvo was seamless. Clear communication and outstanding final designs every time.'}
+];
+document.getElementById('testGrid').innerHTML=testimonials.map(t=>`
+  <div class="test-card glass">
+    <div class="stars">★★★★★</div>
+    <p>"${t.text}"</p>
+    <div class="test-person">
+      <div class="test-avatar">${t.name.split(' ').map(n=>n[0]).join('')}</div>
+      <div><strong>${t.name}</strong><span>${t.role}</span></div>
+    </div>
+  </div>`).join('');
+
+/* ---------- header scroll ---------- */
+const header=document.getElementById('siteHeader');
+const toTop=document.getElementById('toTop');
+window.addEventListener('scroll',()=>{
+  header.classList.toggle('scrolled', window.scrollY>40);
+  toTop.classList.toggle('show', window.scrollY>500);
+});
+toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ---------- mobile menu ---------- */
+const burger=document.getElementById('burger');
+const mobileMenu=document.getElementById('mobileMenu');
+burger.addEventListener('click',()=>{
+  burger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  burger.classList.remove('open');mobileMenu.classList.remove('open');
+}));
+
+/* ---------- reveal on scroll ---------- */
+const revealEls=document.querySelectorAll('[data-reveal]');
+const revealObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); revealObserver.unobserve(en.target);} });
+},{threshold:0.12});
+revealEls.forEach(el=>revealObserver.observe(el));
+
+/* ---------- skill bars ---------- */
+const skillObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      const rows=en.target.querySelectorAll('.skill-row');
+      rows.forEach(r=>{ r.querySelector('.skill-fill').style.width=r.dataset.value+'%'; });
+      skillObserver.unobserve(en.target);
+    }
+  });
+},{threshold:0.3});
+document.querySelectorAll('#skills .skills-wrap > div:last-child').forEach(el=>skillObserver.observe(el));
+
+/* ---------- counters ---------- */
+const counters=document.querySelectorAll('.stat-item');
+const countObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      const target=+en.target.dataset.count;
+      const numEl=en.target.querySelector('.num');
+      let cur=0; const step=Math.max(1,Math.ceil(target/60));
+      const t=setInterval(()=>{
+        cur+=step;
+        if(cur>=target){cur=target;clearInterval(t);}
+        numEl.textContent=cur;
+      },25);
+      countObserver.unobserve(en.target);
+    }
+  });
+},{threshold:0.5});
+counters.forEach(c=>countObserver.observe(c));
+
+/* ---------- contact form ---------- */
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const btn=this.querySelector('button[type="submit"]');
+  const original=btn.innerHTML;
+  btn.innerHTML='<i class="fa-solid fa-check"></i> Message Sent!';
+  this.reset();
+  setTimeout(()=>{btn.innerHTML=original;},2600);
+});
+</script>
+</body>
+</html>
